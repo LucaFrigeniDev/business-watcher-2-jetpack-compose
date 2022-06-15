@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "744195288763",
+    "project_id": "businesswatcher-compose",
+    "storage_bucket": "businesswatcher-compose.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:744195288763:android:861b9560777e6dfff6839e",
+        "android_client_info": {
+          "package_name": "com.example.composetest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "744195288763-7etiefguik96ekttg175qpn1q3g6ni9k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_WdJLHwC7jL_51s7An2s15oZDmuxXBXg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "744195288763-7etiefguik96ekttg175qpn1q3g6ni9k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
