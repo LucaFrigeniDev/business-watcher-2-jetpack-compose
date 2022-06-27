@@ -5,8 +5,7 @@ BusinessWatcher is a database where you can take note on the market (competitors
 
 https://user-images.githubusercontent.com/97344859/175945933-fc38c7b4-e8d1-43ab-ab26-d3cfd15d3758.mp4
 
-![business sectors](https://user-images.githubusercontent.com/97344859/175944475-55a11b38-96c8-4799-9c50-b2b1431ece82.png)
-
+![business sectors](https://user-images.githubusercontent.com/97344859/175946240-6f6c82ca-34d7-4a42-a0ef-ce9e8b84da7d.png)
 
 ## add groups and companies
 
