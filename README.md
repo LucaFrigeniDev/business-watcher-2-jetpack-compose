@@ -2,9 +2,10 @@
 BusinessWatcher is a database where you can take note on the market (competitors, customers). This version use Jetpack Compose
 
 ## add business sectors and check the stats of the market
-https://user-images.githubusercontent.com/97344859/163840659-128798ad-2bef-470f-822f-d2263c170a8a.mp4
+https://user-images.githubusercontent.com/97344859/175944415-1742ec72-9513-4eff-9b1c-cb8e3dd34702.mp4
 
-<img src ="https://user-images.githubusercontent.com/97344859/163840777-81d822bb-937b-489c-bd6c-c3bae4326041.jpg" width=250 height=450 >
+![business sectors](https://user-images.githubusercontent.com/97344859/175944475-55a11b38-96c8-4799-9c50-b2b1431ece82.png)
+
 
 ## add groups and companies
 
