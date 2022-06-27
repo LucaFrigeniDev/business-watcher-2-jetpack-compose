@@ -19,9 +19,13 @@ https://user-images.githubusercontent.com/97344859/175947672-f8dfb21d-57c9-41f2-
 
 https://user-images.githubusercontent.com/97344859/175947680-bcc1aedd-9c25-429c-ab9f-0b8bbc1615de.mp4
 
+## sort
+
+https://user-images.githubusercontent.com/97344859/175948195-b8178afb-1813-4b1b-be74-b7246174b2e5.mp4
+
 ## filter
 
-https://user-images.githubusercontent.com/97344859/163849293-bf10a62e-7edc-4ce7-9e27-65d5a70257f7.mp4
+https://user-images.githubusercontent.com/97344859/175948750-95da896c-8363-4258-b56c-db7a50095396.mp4
 
 
 ## Next steps :
