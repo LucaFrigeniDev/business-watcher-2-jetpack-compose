@@ -9,19 +9,15 @@ https://user-images.githubusercontent.com/97344859/175945933-fc38c7b4-e8d1-43ab-
 
 ## add groups and companies
 
-https://user-images.githubusercontent.com/97344859/163844568-da923720-83ac-40ac-89a3-7e741654d4ea.mp4
+https://user-images.githubusercontent.com/97344859/175947649-49c43217-16b5-45c4-a93e-d638e77e7020.mp4
 
-https://user-images.githubusercontent.com/97344859/163844834-ceef8135-994e-4cbb-a7c0-ef34c7c54551.mp4
-
-<img src ="https://user-images.githubusercontent.com/97344859/163843452-6e11f888-3e5f-401b-bfeb-a628d357907d.jpg" width=250 height=450 >
-
-<img src ="https://user-images.githubusercontent.com/97344859/163843538-8dd1278c-f4a8-4949-9120-f3d52f67caca.jpg" width=250 height=450 >
+https://user-images.githubusercontent.com/97344859/175947660-1c76006a-7458-4645-95e2-2e9ca1a29e66.mp4
 
 ## check group and company informations
 
-https://user-images.githubusercontent.com/97344859/163845201-53dc25d0-54a1-4b49-b39f-1489a6447ee4.mp4
+https://user-images.githubusercontent.com/97344859/175947672-f8dfb21d-57c9-41f2-98fe-f755b3af9a70.mp4
 
-https://user-images.githubusercontent.com/97344859/163845478-1c17e9d1-2c03-45ea-8e35-d64423655ccb.mp4
+https://user-images.githubusercontent.com/97344859/175947680-bcc1aedd-9c25-429c-ab9f-0b8bbc1615de.mp4
 
 ## filter
 
