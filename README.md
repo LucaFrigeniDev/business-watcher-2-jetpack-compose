@@ -27,6 +27,7 @@ https://user-images.githubusercontent.com/97344859/175948195-b8178afb-1813-4b1b-
 
 https://user-images.githubusercontent.com/97344859/175948750-95da896c-8363-4258-b56c-db7a50095396.mp4
 
+https://user-images.githubusercontent.com/97344859/175949133-e469e882-3276-4b53-823e-7b304f2e06fd.mp4
 
 ## Next steps :
 ### New functionnalities :
