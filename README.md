@@ -4,6 +4,9 @@ BusinessWatcher is a database where you can take note on the market (competitors
 Using :
 - Kotlin
 - Jetpack Compose (Framework)
+- Dagger Hilt (DI)
+- Room (ORM)
+- Google Maps (API)
 
 ## add business sectors and check the stats of the market
 
