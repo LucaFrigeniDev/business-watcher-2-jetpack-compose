@@ -42,11 +42,10 @@ https://user-images.githubusercontent.com/97344859/175949133-e469e882-3276-4b53-
 ### New functionnalities :
 - Import/export data
 - Change the currency
-- Turnover and group quick update
+- Filtre by turnover
+- Searchbar clear icon
+- Quick update (Turnover, group, businessSector)
+- Delete entities
 
 ### Points of improvement :
 - Tablet UI
-- Company creation Fragment
-- The display of the turnover
-- Design
-- Image import (loader)
