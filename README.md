@@ -4,6 +4,8 @@ BusinessWatcher is a database where you can take note on the market (competitors
 Using :
 - Kotlin
 - Jetpack Compose (Framework)
+- MVVM (Architecture)
+- Flow, StateFlow (Coroutines)
 - Dagger Hilt (DI)
 - Room (ORM)
 - Google Maps (API)
