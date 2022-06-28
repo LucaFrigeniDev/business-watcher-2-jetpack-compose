@@ -1,5 +1,9 @@
 # business-watcher-2-jetpack-compose
-BusinessWatcher is a database where you can take note on the market (competitors, customers). This version use Jetpack Compose
+BusinessWatcher is a database where you can take note on the market (competitors, customers).
+
+Using :
+- Kotlin
+- Jetpack Compose (Framework)
 
 ## add business sectors and check the stats of the market
 
