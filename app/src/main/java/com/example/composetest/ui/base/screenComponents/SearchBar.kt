@@ -1,4 +1,4 @@
-package com.example.composetest.ui.base
+package com.example.composetest.ui.base.screenComponents
 
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -13,9 +13,11 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavBackStackEntry
 import androidx.navigation.NavController
+import com.example.composetest.R
 import com.example.composetest.ui.ROUTE_COMPANIES
 import com.example.composetest.ui.ROUTE_GROUPS
 import com.example.composetest.ui.ROUTE_MAP
@@ -54,7 +56,11 @@ fun SearchBar(navController: NavController, navBackStackEntry: NavBackStackEntry
             .fillMaxWidth()
             .padding(horizontal = 30.dp, vertical = 10.dp),
         textStyle = MaterialTheme.typography.body1,
-        label = { Text("search", color = Grey, style = MaterialTheme.typography.body1) },
+        label = { Text(
+            stringResource(R.string.search),
+            color = Grey,
+            style = MaterialTheme.typography.body1) },
+        singleLine = true,
         shape = RoundedCornerShape(50),
         colors = TextFieldDefaults.outlinedTextFieldColors(
             Grey,

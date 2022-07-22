@@ -15,13 +15,15 @@ class BusinessSectorViewModel
 @Inject constructor(private val repository: BusinessSectorRepository) : ViewModel() {
 
     init {
-        viewModelScope.launch { repository.businessSectorListSize.collect { _size.value = it } }
+        viewModelScope.launch {
+            repository.businessSectorListSize.collect { _businessSectorListSize.value = it }
+        }
     }
 
     fun businessSectors() = repository.getBusinessSectorWithCompanies
 
-    private val _size = MutableStateFlow(0)
-    var size: StateFlow<Int> = _size
+    private val _businessSectorListSize = MutableStateFlow(0)
+    var businessSectorListSize: StateFlow<Int> = _businessSectorListSize
 
     private val _name = MutableStateFlow("")
     val name: StateFlow<String> = _name
@@ -31,11 +33,11 @@ class BusinessSectorViewModel
     }
 
     fun insert() = viewModelScope.launch {
-        if (name.value.isNotBlank())
-            repository.insert(businessSector())
+        repository.insert(businessSector())
+        _name.value = ""
     }
 
-    private fun businessSector() = when (size.value) {
+    private fun businessSector() = when (businessSectorListSize.value) {
         0 -> BusinessSector(0, name.value, "#F9C80E")
         1 -> BusinessSector(0, name.value, "#F86624")
         2 -> BusinessSector(0, name.value, "#EA3546")

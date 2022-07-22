@@ -4,8 +4,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.composetest.data.repository.GroupRepository
 import com.example.composetest.domain.relations.GroupWithCompanies
-import com.example.composetest.ui.base.filteredGroups
-import com.example.composetest.ui.base.searchBarFilter
+import com.example.composetest.ui.base.screenComponents.filteredGroups
+import com.example.composetest.ui.base.screenComponents.searchBarFilter
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

@@ -1,4 +1,4 @@
-package com.example.composetest.ui.base
+package com.example.composetest.ui.base.screenComponents
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -34,7 +34,9 @@ fun StartDrawer(startDrawerState: ScaffoldState, navController: NavController) {
         ) {
             Text(
                 stringResource(R.string.app_name),
-                Modifier.fillMaxSize().padding(top = 25.dp),
+                Modifier
+                    .fillMaxSize()
+                    .padding(top = 25.dp),
                 DarkGrey,
                 style = MaterialTheme.typography.h1,
                 textAlign = TextAlign.Center
@@ -42,7 +44,9 @@ fun StartDrawer(startDrawerState: ScaffoldState, navController: NavController) {
 
             FloatingActionButton(
                 { scope.launch { startDrawerState.drawerState.close() } },
-                Modifier.size(40.dp).padding(top = 10.dp, end = 10.dp),
+                Modifier
+                    .size(40.dp)
+                    .padding(top = 10.dp, end = 10.dp),
                 backgroundColor = DarkGrey
             ) {
                 Icon(
@@ -64,13 +68,22 @@ fun StartDrawer(startDrawerState: ScaffoldState, navController: NavController) {
         }) {
             Text(stringResource(R.string.sector), style = MaterialTheme.typography.body1)
         }
-        DropdownMenuItem({ scope.launch { startDrawerState.drawerState.close() } }) {
+
+        DropdownMenuItem({
+            scope.launch { startDrawerState.drawerState.close() }
+        }) {
             Text(stringResource(R.string.currency), style = MaterialTheme.typography.body1)
         }
-        DropdownMenuItem({ scope.launch { startDrawerState.drawerState.close() } }) {
+
+        DropdownMenuItem({
+            scope.launch { startDrawerState.drawerState.close() }
+        }) {
             Text(stringResource(R.string.export_Json), style = MaterialTheme.typography.body1)
         }
-        DropdownMenuItem({ scope.launch { startDrawerState.drawerState.close() } }) {
+
+        DropdownMenuItem({
+            scope.launch { startDrawerState.drawerState.close() }
+        }) {
             Text(stringResource(R.string.import_Json), style = MaterialTheme.typography.body1)
         }
     }

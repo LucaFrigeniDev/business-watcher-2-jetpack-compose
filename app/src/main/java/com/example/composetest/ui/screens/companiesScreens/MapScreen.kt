@@ -17,6 +17,9 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.example.composetest.MainActivity
 import com.example.composetest.R.drawable
+import com.example.composetest.displayScreen
+import com.example.composetest.findActivity
+import com.example.composetest.ui.ROUTE_MAP
 import com.google.android.gms.maps.model.CameraPosition
 import com.google.android.gms.maps.model.LatLng
 import com.google.maps.android.compose.*
@@ -27,8 +30,9 @@ import kotlinx.coroutines.launch
 fun MapScreen(navController: NavController) {
     val context = LocalContext.current
     val viewModel = hiltViewModel<CompaniesViewModel>()
-
     val scope = rememberCoroutineScope()
+
+    displayScreen = ROUTE_MAP
 
     viewModel.getUserLocation(context)
 
@@ -44,15 +48,15 @@ fun MapScreen(navController: NavController) {
         cameraPositionState,
         uiSettings = MapUiSettings(zoomControlsEnabled = false)
     ) {
-        for (company in companies) {
+        companies.forEach {
             Marker(
-                LatLng(company.latitude, company.longitude),
-                title = company.name,
-                snippet = company.city,
-                icon = viewModel.createMarker(context, company.businessSectorId),
+                LatLng(it.latitude, it.longitude),
+                title = it.name,
+                snippet = it.city,
+                icon = viewModel.createMarker(context, it.businessSectorId),
                 onInfoWindowClick = {
                     scope.launch(Dispatchers.Main) {
-                        navController.navigate("company?id=${company.id}")
+                        navController.navigate("company?id=${it.id}")
                     }
                 }
             )
@@ -82,9 +86,6 @@ fun GeoLocationFAB(
         cameraPositionState.position = CameraPosition.fromLatLngZoom(userLocation, 10f)
     },
     Modifier.size(40.dp)
-) { Icon(painterResource(drawable.ic_baseline_my_location_24), "") }
-
-fun Context.findActivity(): MainActivity? = when (this) {
-    is MainActivity -> this
-    else -> null
+) {
+    Icon(painterResource(drawable.ic_baseline_my_location_24), "")
 }

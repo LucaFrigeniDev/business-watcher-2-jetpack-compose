@@ -16,10 +16,10 @@ import com.example.composetest.domain.entities.BusinessSector
 import com.example.composetest.domain.entities.Company
 import com.example.composetest.domain.entities.Group
 import com.example.composetest.domain.relations.BusinessSectorWithCompanies
-import com.example.composetest.ui.base.filteredBusinessSectors
-import com.example.composetest.ui.base.filteredGroups
-import com.example.composetest.ui.base.isIndependentChipChecked
-import com.example.composetest.ui.base.searchBarFilter
+import com.example.composetest.ui.base.screenComponents.filteredBusinessSectors
+import com.example.composetest.ui.base.screenComponents.filteredGroups
+import com.example.composetest.ui.base.screenComponents.isIndependentChipChecked
+import com.example.composetest.ui.base.screenComponents.searchBarFilter
 import com.google.android.gms.location.LocationServices
 import com.google.android.gms.maps.model.BitmapDescriptor
 import com.google.android.gms.maps.model.BitmapDescriptorFactory
@@ -37,6 +37,12 @@ class CompaniesViewModel
     private val groupRepository: GroupRepository,
     private val sectorRepository: BusinessSectorRepository
 ) : ViewModel() {
+
+    private val _companies = MutableStateFlow<List<Company>>(emptyList())
+    val companies: StateFlow<List<Company>> = _companies
+
+    private val _businessSectors = MutableStateFlow<List<BusinessSector>>(emptyList())
+    val businessSectors: StateFlow<List<BusinessSector>> = _businessSectors
 
     init {
         viewModelScope.launch {
@@ -61,12 +67,6 @@ class CompaniesViewModel
             }
         }
     }
-
-    private val _companies = MutableStateFlow<List<Company>>(emptyList())
-    val companies: StateFlow<List<Company>> = _companies
-
-    private val _businessSectors = MutableStateFlow<List<BusinessSector>>(emptyList())
-    val businessSectors: StateFlow<List<BusinessSector>> = _businessSectors
 
     private fun getCompanies(businessSectorWithCompanies: List<BusinessSectorWithCompanies>) {
         val companies: MutableList<Company> = mutableListOf()
@@ -151,7 +151,7 @@ class CompaniesViewModel
 
         SortType.DISTANCE ->
             _companies.value =
-                companies.value.sortedWith(compareByDescending {
+                companies.value.sortedWith(compareBy {
                     SphericalUtil.computeDistanceBetween(
                         userLocation.value,
                         LatLng(it.latitude, it.longitude)
@@ -161,7 +161,7 @@ class CompaniesViewModel
 
     enum class SortType { TURNOVER, GROUP, SECTOR, DISTANCE }
 
-    private val _userLocation = MutableStateFlow(LatLng(0.0, 0.0))
+    private val _userLocation = MutableStateFlow(location)
     val userLocation: StateFlow<LatLng> = _userLocation
 
     fun getUserLocation(context: Context) {
@@ -173,9 +173,10 @@ class CompaniesViewModel
                 viewModelScope.launch {
                     LocationServices.getFusedLocationProviderClient(context)
                         .lastLocation.addOnCompleteListener { task ->
-                            if (task.isSuccessful && task.result != null)
-                                _userLocation.value =
-                                    LatLng(task.result.latitude, task.result.longitude)
+                            if (task.isSuccessful && task.result != null) {
+                                location = LatLng(task.result.latitude, task.result.longitude)
+                                _userLocation.value = location
+                            }
                         }
                 }
             }

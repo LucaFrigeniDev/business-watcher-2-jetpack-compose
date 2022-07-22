@@ -1,4 +1,4 @@
-package com.example.composetest.ui.base
+package com.example.composetest.ui
 
 import android.content.res.Configuration
 import androidx.compose.foundation.Image
@@ -19,12 +19,13 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.example.composetest.R
+import com.example.composetest.displayScreen
 import com.example.composetest.ui.theme.DarkGrey
 
 @Composable
 fun BackBtn(navController: NavController) =
     IconButton(
-        { navController.popBackStack() },
+        { navController.navigate(displayScreen) },
         Modifier.padding(4.dp)
     ) {
         Icon(
@@ -35,13 +36,16 @@ fun BackBtn(navController: NavController) =
     }
 
 @Composable
-fun Title(text: String) = Text(
-    text,
-    Modifier.fillMaxWidth(),
-    DarkGrey,
-    textAlign = TextAlign.Center,
-    style = MaterialTheme.typography.h2
-)
+fun Title(text: String) {
+    Text(
+        text,
+        Modifier.fillMaxWidth(),
+        DarkGrey,
+        textAlign = TextAlign.Center,
+        style = MaterialTheme.typography.h2
+    )
+    Spacer(Modifier.padding(20.dp))
+}
 
 @Composable
 fun EmptyScreen(text: String, color: Color, modifier: Modifier) = Column(

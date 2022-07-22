@@ -9,7 +9,10 @@ import androidx.lifecycle.viewModelScope
 import com.example.composetest.data.repository.BusinessSectorRepository
 import com.example.composetest.data.repository.CompanyRepository
 import com.example.composetest.data.repository.GroupRepository
+import com.example.composetest.domain.entities.Company
+import com.google.firebase.storage.FirebaseStorage
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.async
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
@@ -76,11 +79,8 @@ class CompanyCreationViewModel
     private val _independentLogoUri = MutableStateFlow<Uri?>(null)
     val independentLogoUri: StateFlow<Uri?> = _independentLogoUri
 
-    private val _latitude = MutableStateFlow(0.0)
-    val latitude: StateFlow<Double> = _latitude
-
-    private val _longitude = MutableStateFlow(0.0)
-    val longitude: StateFlow<Double> = _longitude
+    private val latitude = MutableStateFlow(0.0)
+    private val longitude = MutableStateFlow(0.0)
 
     fun setName(companyName: String) {
         name.value = companyName
@@ -166,33 +166,46 @@ class CompanyCreationViewModel
                 1
             )
             if (addressList.isNotEmpty()) {
-                _latitude.value = addressList[0].latitude
-                _longitude.value = addressList[0].longitude
+                latitude.value = addressList[0].latitude
+                longitude.value = addressList[0].longitude
             }
         } catch (e: IOException) {
             e.printStackTrace()
         }
     }
 
-    fun insert() = viewModelScope.launch {
+    fun createCompany() = viewModelScope.launch {
         val groupId: Long? =
             if (group.value == "Independent") null
             else group.value.toLong()
 
-        companyRepository.createCompany(
-            name.value,
-            businessSector.value,
-            groupId,
-            city.value,
-            postalCode.value,
-            address.value,
-            latitude.value,
-            longitude.value,
-            turnover.value,
-            description.value,
-            independentLogoUri.value,
-            groupLogo.value
+        val uuid: String = UUID.randomUUID().toString()
+        val mImageRef = FirebaseStorage.getInstance().getReference(uuid)
+
+        val logo =
+            if (groupId == null) {
+                val uploadLogo = async { mImageRef.putFile(independentLogoUri.value!!) }
+                uploadLogo.await()
+                uuid
+            } else
+                groupLogo.value
+
+        companyRepository.insert(
+            Company(
+                0,
+                name.value,
+                businessSector.value,
+                groupId,
+                city.value,
+                postalCode.value,
+                address.value,
+                latitude.value,
+                longitude.value,
+                turnover.value,
+                listOf(),
+                description.value,
+                logo
+            )
         )
     }
 }
-

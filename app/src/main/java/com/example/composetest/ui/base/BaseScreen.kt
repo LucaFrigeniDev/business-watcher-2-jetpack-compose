@@ -1,10 +1,7 @@
 package com.example.composetest.ui.base
 
-import androidx.compose.foundation.gestures.scrollable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -15,6 +12,7 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.example.composetest.ui.*
+import com.example.composetest.ui.base.screenComponents.*
 import com.example.composetest.ui.theme.DarkGrey
 import com.example.composetest.ui.theme.White
 
@@ -51,10 +49,11 @@ fun BaseScreen() {
             floatingActionButton = { if (!isFullScreen) AddFAB(navController) },
             isFloatingActionButtonDocked = true,
             bottomBar = {
-                if (!isFullScreen) BottomAppBar(
-                    bottomDrawerState,
-                    startDrawerState
-                )
+                if (!isFullScreen)
+                    BottomAppBar(
+                        bottomDrawerState,
+                        startDrawerState
+                    )
             },
             drawerContent = { StartDrawer(startDrawerState, navController) },
             drawerBackgroundColor = DarkGrey,
@@ -64,7 +63,9 @@ fun BaseScreen() {
 
             Box(Modifier.fillMaxSize()) {
                 Navigation(navController, navBackStackEntry)
-                if (!isFullScreen) SearchBar(navController, navBackStackEntry)
+
+                if (!isFullScreen)
+                    SearchBar(navController, navBackStackEntry)
             }
         }
     }

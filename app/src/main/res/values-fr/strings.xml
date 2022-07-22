@@ -87,4 +87,11 @@
     <string name="description_dialog_message">Mettez à jour la déscription</string>
     <string name="description_dialog_positive_btn">Mettre à jour</string>
     <string name="description_dialog_negative_btn">Annuler</string>
+
+    <string name="connectivity_error">Verifiez votre connection</string>
+
+    //Filter
+    <string name="select_all">sélectionner tous</string>
+    <string name="unselect_all">désélectionner tous</string>
+
 </resources>

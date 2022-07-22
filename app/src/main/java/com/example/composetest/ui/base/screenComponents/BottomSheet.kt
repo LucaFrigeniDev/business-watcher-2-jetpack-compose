@@ -1,4 +1,4 @@
-package com.example.composetest.ui.base
+package com.example.composetest.ui.base.screenComponents
 
 import android.graphics.Color.parseColor
 import androidx.compose.foundation.layout.*
@@ -62,7 +62,7 @@ fun BottomSheet(
             { scope.launch { bottomDrawerState.close() } },
             Modifier.size(40.dp),
             backgroundColor = DarkGrey
-        ) { Icon(Icons.Default.KeyboardArrowDown,"", tint = White) }
+        ) { Icon(Icons.Default.KeyboardArrowDown, "", tint = White) }
 
         Text(
             stringResource(R.string.filter_title),
@@ -166,7 +166,7 @@ fun SelectionButtons(
                 }
             },
             Modifier.weight(10F),
-        ) { Text("select all", color = DarkGrey, style = MaterialTheme.typography.button) }
+        ) { Text(stringResource(R.string.select_all), color = DarkGrey, style = MaterialTheme.typography.button) }
 
         Spacer(Modifier.weight(1F))
 
@@ -181,7 +181,7 @@ fun SelectionButtons(
                 }
             },
             Modifier.weight(10F),
-        ) { Text("unselect all", color = DarkGrey, style = MaterialTheme.typography.button) }
+        ) { Text(stringResource(R.string.unselect_all), color = DarkGrey, style = MaterialTheme.typography.button) }
     }
 }
 

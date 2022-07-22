@@ -3,7 +3,7 @@
 
     <string name="search" translatable="false">search</string>
 
-    //TypeActivity
+    //SectorActivity
     <string name="color_1" translatable="false">#f54242</string>
     <string name="color_2" translatable="false">#ff8636</string>
     <string name="color_3" translatable="false">#8ce66e</string>
@@ -97,4 +97,11 @@
     <string name="description_dialog_message">Update the description</string>
     <string name="description_dialog_positive_btn">Update</string>
     <string name="description_dialog_negative_btn">Cancel</string>
+
+    <string name="connectivity_error">Check your connectivity</string>
+
+    //Filter
+    <string name="select_all">select all</string>
+    <string name="unselect_all">unselect all</string>
+
 </resources>

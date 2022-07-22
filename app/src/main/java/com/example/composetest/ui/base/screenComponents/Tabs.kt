@@ -1,4 +1,4 @@
-package com.example.composetest.ui.base
+package com.example.composetest.ui.base.screenComponents
 
 import androidx.compose.material.Icon
 import androidx.compose.material.Tab

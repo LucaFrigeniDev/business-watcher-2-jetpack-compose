@@ -10,6 +10,7 @@ import com.example.composetest.domain.other.GroupBusinessSector
 import com.example.composetest.domain.other.GroupRank
 import com.example.composetest.domain.relations.BusinessSectorWithCompanies
 import com.example.composetest.domain.relations.GroupWithCompanies
+import com.example.composetest.numberFormat
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -67,7 +68,7 @@ class GroupDetailViewModel
             if (groupWithCompanies.group.id == id) {
                 _group.value = groupWithCompanies.group
                 _numberOfCompanies.value = groupWithCompanies.companies.size.toString()
-                _turnover.value = turnover.toString()
+                _turnover.value = numberFormat(turnover)
             }
         }
     }
