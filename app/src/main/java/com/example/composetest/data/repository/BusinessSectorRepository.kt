@@ -7,7 +7,7 @@ import com.example.composetest.domain.relations.BusinessSectorWithCompanies
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
-class BusinessSectorRepository @Inject constructor(val dao: BusinessSectorDAO) {
+class BusinessSectorRepository @Inject constructor(var dao: BusinessSectorDAO) {
 
     val businessSectorList: Flow<List<BusinessSector>> = dao.getBusinessSectors()
 

@@ -15,7 +15,6 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
-import com.example.composetest.MainActivity
 import com.example.composetest.R.drawable
 import com.example.composetest.displayScreen
 import com.example.composetest.findActivity
@@ -48,15 +47,15 @@ fun MapScreen(navController: NavController) {
         cameraPositionState,
         uiSettings = MapUiSettings(zoomControlsEnabled = false)
     ) {
-        companies.forEach {
+        companies.forEach { company ->
             Marker(
-                LatLng(it.latitude, it.longitude),
-                title = it.name,
-                snippet = it.city,
-                icon = viewModel.createMarker(context, it.businessSectorId),
+                LatLng(company.latitude, company.longitude),
+                title = company.name,
+                snippet = company.city,
+                icon = viewModel.createMarker(context, company.businessSectorId),
                 onInfoWindowClick = {
-                    scope.launch(Dispatchers.Main) {
-                        navController.navigate("company?id=${it.id}")
+                    scope.launch {
+                        navController.navigate("company?id=${company.id}")
                     }
                 }
             )

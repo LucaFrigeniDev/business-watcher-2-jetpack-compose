@@ -1,4 +1,4 @@
-package com.example.composetest
+package com.example.composetest.ui
 
 import android.Manifest
 import android.content.pm.PackageManager

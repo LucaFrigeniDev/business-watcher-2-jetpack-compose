@@ -12,10 +12,12 @@ import javax.inject.Inject
 
 @HiltViewModel
 class BusinessSectorViewModel
-@Inject constructor(private val repository: BusinessSectorRepository) : ViewModel() {
+@Inject constructor(
+    private val repository: BusinessSectorRepository
+    ) : ViewModel() {
 
     init {
-        viewModelScope.launch {
+        viewModelScope.launch() {
             repository.businessSectorListSize.collect { _businessSectorListSize.value = it }
         }
     }
@@ -32,12 +34,12 @@ class BusinessSectorViewModel
         _name.value = name
     }
 
-    fun insert() = viewModelScope.launch {
+    fun insert() = viewModelScope.launch() {
         repository.insert(businessSector())
         _name.value = ""
     }
 
-    private fun businessSector() = when (businessSectorListSize.value) {
+    fun businessSector() = when (businessSectorListSize.value) {
         0 -> BusinessSector(0, name.value, "#F9C80E")
         1 -> BusinessSector(0, name.value, "#F86624")
         2 -> BusinessSector(0, name.value, "#EA3546")

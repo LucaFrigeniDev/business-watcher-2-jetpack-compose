@@ -1,5 +1,6 @@
 package com.example.composetest.ui.screens.companiesScreens.screenComponent
 
+import android.util.Log
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
@@ -56,7 +57,9 @@ fun CompanyItemCard(
             .fillMaxWidth()
             .padding(6.dp)
             .height(100.dp)
-            .clickable { navController?.navigate("company?id=${company.id}") },
+            .clickable {
+                navController?.navigate("company?id=${company.id}")
+            },
     ) {
         Card(
             Modifier
