@@ -55,7 +55,7 @@
     //FragCreateCompany
     <string name="create_company_title">Ajouter une société</string>
     <string name="city">Ville</string>
-    <string name="address">Adresse</string>
+    <string name="street">Rue</string>
     <string name="postal_code">Code postal</string>
     <string name="turnover">CA</string>
     <string name="error_address">vérifiez l\'adresse</string>

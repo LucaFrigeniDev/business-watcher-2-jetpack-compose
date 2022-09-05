@@ -65,10 +65,10 @@
     //FragCreateCompany
     <string name="create_company_title">Add a new company</string>
     <string name="city">City</string>
-    <string name="address">Address</string>
+    <string name="street">Street</string>
     <string name="postal_code">Postal code</string>
     <string name="turnover">Turnover</string>
-    <string name="error_address">check the address fields</string>
+    <string name="error_address">check the companyAddress fields</string>
     <string name="logo_alert_dialog_text">Add a logo</string>
 
     //FragListGroup

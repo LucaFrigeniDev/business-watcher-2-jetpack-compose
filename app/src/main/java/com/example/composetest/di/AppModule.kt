@@ -3,13 +3,14 @@ package com.example.composetest.di
 import android.app.Application
 import android.content.Context
 import androidx.room.Room
-import com.example.composetest.App
-import com.example.composetest.data.BusinessWatcherDataBase
+import com.example.composetest.BusinessWatcherDataBase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
+import kotlinx.coroutines.CoroutineDispatcher
+import kotlinx.coroutines.Dispatchers
 import javax.inject.Singleton
 
 @Module
@@ -43,4 +44,7 @@ object AppModule {
     @Singleton
     @Provides
     fun provideCompanyDao(db: BusinessWatcherDataBase) = db.companyDao()
+
+    @Provides
+    fun providesIoDispatcher(): CoroutineDispatcher = Dispatchers.IO
 }

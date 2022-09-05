@@ -1,11 +1,9 @@
 package com.example.composetest
 
-import com.example.composetest.data.repository.BusinessSectorRepository
-import com.example.composetest.ui.screens.businessSectorsScreen.BusinessSectorViewModel
+import com.example.composetest.screens.business_sector_list.data.BusinessSectorRepository
+import com.example.composetest.screens.business_sector_list.ui.BusinessSectorViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.test.*
 import org.junit.*
@@ -36,7 +34,7 @@ class BusinessSectorViewModelTest {
         //Assert.assertEquals("#F9C80E", viewModel.businessSector().color)
 //
         launch {
-            viewModel.insert()
+            viewModel.createBusinessSector()
         }
         advanceUntilIdle()
 
